@@ -1,0 +1,28 @@
+data_favian=read.csv2("C:/Users/Favian/OneDrive/Documents/Praktikum Statistika/data_favian.csv")
+View(data_favian)
+
+favian <- data_favian[data_favian$tinggi.badan==165,]
+View(favian)
+
+data_favian$tinggi.badan <- ifelse(data_favian$tinggi.badan > 180,c("tinggi"),c("pendek"))
+View(favian)
+
+data_favian$Jurusan <- c("Infor21")
+data_favian$Fakultas<- c("FTI")
+View(data_favian)
+
+data_favian$Jurusan<-NULL
+View(data_favian)
+
+data_favian.namagen <- data_favian[1:2]
+data_favian.namagen1 <- data_favian[3:4]
+data_favian.gabungan<-cbind(data_favian.namagen,data_favian.namagen1)
+View(data_favian.gabungan)
+
+data_baris_favian1sampai5<-data_favian[1:5,]
+data_baris_favian.25sampai30<-data_favian[25:30,]
+data_baris_favian.gabungan<-rbind(data_baris_favian1sampai5,data_baris_favian.25sampai30)
+View(data_baris_favian.gabungan)
+
+data_favian.sort<-data_favian[order(data_favian$nama),]
+View(data_favian.sort)
