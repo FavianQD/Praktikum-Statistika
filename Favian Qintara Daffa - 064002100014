@@ -1,0 +1,38 @@
+favian=read.delim("clipboard")
+summary(iris)
+head(iris)
+by(iris$Petal.Length, iris$Species, summary)
+mean(iris$Sepal.Length)
+var(iris$Sepal.Length)
+boxplot(iris$Petal.Length)
+boxplot(Petal.Length ~ Species, data=iris, main="Petal Length", xlab="Species", ylab="Length")
+
+hist(iris$Petal.Length)
+hist(iris$Sepal.Width)
+hist(iris$Sepal.Width[iris$Species=="setosa"])
+hist(iris$Sepal.Width[iris$Species=="versicolor"])
+d=density(iris$Petal.Length)
+plot(d)
+d=density(iris$Sepal.Width[iris$Species=="versicolor"])
+plot (d)
+
+
+install.packages("ggplot2")
+
+library(ggplot2)
+
+data_favian=read.csv2("C:/Users/Favian/OneDrive/Documents/Praktikum Statistika/DirectMarketing.csv")
+qplot(data_favian$AmountSpent, data_favian$Salary)
+plot(data_favian$AmountSpent, data_favian$Salary)
+
+data_favian=read.csv2("C:/Users/Favian/OneDrive/Documents/Praktikum Statistika/DirectMarketing.csv")
+hist(data_favian$AmountSpent)
+favian=density(data_favian$AmountSpent)
+plot(favian)
+library(ggplot2)
+
+data_favian1=read.csv2("C:/Users/Favian/OneDrive/Documents/Praktikum Statistika/houseprice.csv")
+qplot(data_favian1$SqFt, data_favian1$Price)
+qplot(data_favian1$Bedrooms, data_favian1$Price)
+qplot(data_favian1$Bathrooms, data_favian1$Price)
+qplot(data_favian1$Offers, data_favian1$Price)
